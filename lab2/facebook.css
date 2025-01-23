@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Две равные колонки */
+    max-width: 1000px;
+    width: 100%;
+}
+
+.left-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.left-block h1 {
+    color: #1877f2;
+    font-size: 36px;
+    margin: 0;
+    font-weight: bold;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.left-block p {
+    font-size: 18px;
+    color: #606770;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.right-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px 0px 12px 10px;
+    font-size: 16px;
+    border: 1px solid #dddfe2;
+    border-radius: 5px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background-color: #1877f2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.form-container .create-account {
+    background-color: #42b72a;
+    margin-top: 10px;
+}
+
+.form-container a {
+    display: block;
+    text-align: center;
+    color: #1877f2;
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+.footer-link {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+    color: #606770;
+}
+
+.footer-link a {
+    color: #1877f2;
+    text-decoration: none;
+}
+
+.footer-link a:hover {
+    text-decoration: underline;
+}
