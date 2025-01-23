@@ -10,7 +10,7 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Две равные колонки */
+    grid-template-columns: 1fr 1fr;
     max-width: 1000px;
     width: 100%;
 }

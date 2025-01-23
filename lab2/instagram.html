@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tailwind Example</title>
+        <script src="https://cdn.tailwindcss.com"></script> 
+        <!-- Использовал тайлвинд потому что я знаю css, просто тайлвинд яввляется быстрым решением, а сама концепция верстки как таковой не меняется -->
+        <!-- Задача буквально на позиционирование -->
+    </head>
+    <body class="bg-gray-100 flex items-center justify-center px-[20%]">
+        <div class="container grid grid-cols-2 gap-4 w-full h-screen">
+            <div class="image w-full h-full p-16">
+                <img src="images/insta.png" alt="" class="w-full h-full object-cover">
+            </div>
+            <div class="login flex justify-center items-center flex-col">
+                <div class="form p-8">
+                    <div class="form_container bg-white p-8 shadow-md">
+                        <h1 class="text-3xl font-bold mb-4 text-center">Instagram</h1>
+                        <form action="" method="post" class="">
+                            <input type="text" name="username" placeholder="Username" class="w-full p-2 mb-4 border border-gray-300 rounded">
+                            <input type="password" name="password" placeholder="Password" class="w-full p-2 mb-4 border border-gray-300 rounded">
+                            <button type="submit" class="w-full p-2 bg-blue-500 text-white rounded">Login</button>
+                        </form>
+                        <div class="flex items-center mt-4">
+                            <div class="flex-grow border-t border-gray-300"></div>
+                            <span class="mx-4 text-gray-500">или</span>
+                            <div class="flex-grow border-t border-gray-300"></div>
+                        </div>
+                        <div class="flex flex-col items-center justify-center">
+                            <a class="w-full p-2 text-blue-500 rounded text-center">Войти через Facebook</a>
+                            <a class="w-full p-2 rounded text-center">Забыли пароль?</a>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 shadow-md mt-4">
+                        <p class="text-center">У вас нет аккаунта? <a href="" class="text-blue-500">Зарегистрироваться</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
