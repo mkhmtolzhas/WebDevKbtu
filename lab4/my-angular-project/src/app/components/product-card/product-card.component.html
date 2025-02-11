@@ -1,0 +1,21 @@
+<div class="product-card">
+  <div class="product-card-image">
+    <img [src]="image" [alt]="title">
+  </div>
+
+  <div class="product-card-content">
+    <h3 class="product-card-title">{{ title }}</h3>
+    <p class="product-card-description">{{ description }}</p>
+    <p class="product-card-price">{{ price | currency:'USD' }}</p>
+
+    <!-- Рейтинг со звёздами -->
+    <div class="product-card-rating">
+      <i *ngFor="let star of fullStars" class="fas fa-star"></i>
+      <i *ngIf="hasHalfStar" class="fas fa-star-half-alt"></i>
+      <i *ngFor="let star of emptyStars" class="far fa-star"></i>
+      <span class=""> {{ rating }}</span>
+    </div>
+
+    <a [href]="link" class="product-card-button">Go to Product</a>
+  </div>
+</div>

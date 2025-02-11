@@ -1,0 +1,30 @@
+.product-h1{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.product-cards {
+    padding: 30px 8%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product-load{
+    width: 100%;
+    padding: 30px 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-load-button{
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}

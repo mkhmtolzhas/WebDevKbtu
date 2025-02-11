@@ -1,0 +1,15 @@
+<section class="container">
+    <h1 class="product-h1">
+        Products
+    </h1>
+    <div class="product-cards">
+        <app-product-card *ngFor="let product of products" [title]="product.title" [description]="product.description" [price]="product.price" [image]="product.image" [link]="product.link" [rating]="product.rating" [category]="product.category">
+        </app-product-card>
+    </div>
+    
+    <div class="product-load">
+        <button class="product-load-button" (click)="loadMore()">
+            Load More
+        </button>
+    </div>
+</section>

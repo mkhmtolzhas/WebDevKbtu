@@ -1,0 +1,18 @@
+:root {
+    --dark-color: #ac0816;
+    --primary-color: #e01b2b;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+}

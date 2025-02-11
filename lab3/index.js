@@ -7,6 +7,12 @@ form.addEventListener('submit', (e) => {
     const text = input.value.trim();
     if (text === '') return;
 
+
+    if (text.includes('_')) {
+        alert('Invalid input');
+        return;
+    }
+
     const task = document.createElement('li');
     task.textContent = text;
 
@@ -19,7 +25,6 @@ form.addEventListener('submit', (e) => {
     deleteBtn.textContent = "X";
     deleteBtn.classList.add("delete");
     deleteBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
         task.remove();
     });
 
