@@ -21,6 +21,14 @@ async def get_products(page: int = 1, limit: int = 10, session: SessionDependenc
         "product": result
     }
 
+@router.get("/search")
+async def get_products_by_title(title: str, page: int = 1, limit: int = 10, session: SessionDependency = SessionDependency()):
+    result = await ProductService.get_products_by_title(session, title, page, limit)
+    return {
+        "message": "Products retrieved successfully",
+        "product": result
+    }
+
 @router.get("/{product_id}")
 async def get_product(product_id: int, session: SessionDependency = SessionDependency()):
     result = await ProductService.get_product(session, product_id)

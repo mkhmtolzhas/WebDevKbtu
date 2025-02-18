@@ -33,6 +33,18 @@ class ProductService:
         except Exception as e:
             raise ProductExepction.ProductNotFound
 
+    async def get_products_by_title(session: AsyncSession, title: str, page: int = 1, limit: int = 10) -> list[ProductInDB]:
+        try:
+            stmt = select(ProductModel).where(ProductModel.title.ilike(f'%{title}%')).limit(limit).offset((page - 1) * limit)
+            result = await session.execute(stmt)
+            products = result.scalars().all()
+
+            products = [ProductInDB.model_validate(product, from_attributes=True).model_dump() for product in products]
+
+            return products
+        except Exception as e:
+            raise ProductExepction.ProductNotFound
+
     @staticmethod
     async def get_product(session: AsyncSession, product_id: int) -> ProductInDB:
         try:
