@@ -7,7 +7,6 @@
     <h3 class="product-card-title">{{ product.title }}</h3>
     <p class="product-card-description">{{ product.description }}</p>
     <p class="product-card-price">{{ product.price | currency:'₸ ' }}</p>
-
     <!-- Рейтинг со звёздами -->
     <div class="product-card-rating">
       <i *ngFor="let star of fullStars" class="fas fa-star"></i>
