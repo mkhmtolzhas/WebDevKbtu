@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Product } from '../../model/product';
 
 @Component({
   selector: 'app-product-card',
@@ -9,30 +10,22 @@ import { Component, Input } from '@angular/core';
   styleUrl: './product-card.component.css'
 })
 export class ProductCardComponent {
-  @Input() title: string = '';
-  @Input() price: number = 0;
-  @Input() description: string = '';
-  @Input() category: string = '';
-  @Input() link: string = '';
-  @Input() rating: number = 0;
-  @Input() image: string = '';
-  
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
+  @Input() product!: Product;
+  @Output() addToFavoriteEvent = new EventEmitter<Product>();
 
   get fullStars(): number[] {
-    return Array(Math.floor(this.rating)).fill(0);
+    return Array(Math.floor(this.product.rating)).fill(0);
   }
-  
+
   get hasHalfStar(): boolean {
-    return this.rating % 1 !== 0;
+    return this.product.rating % 1 !== 0;
   }
-  
+
   get emptyStars(): number[] {
-    return Array(5 - Math.ceil(this.rating)).fill(0);
+    return Array(5 - Math.ceil(this.product.rating)).fill(0);
+  }
+
+  addToFavorite() {
+    this.addToFavoriteEvent.emit(this.product);
   }
 }

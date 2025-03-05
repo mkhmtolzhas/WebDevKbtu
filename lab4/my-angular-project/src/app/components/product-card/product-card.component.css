@@ -49,6 +49,12 @@
     font-size: 16px;
     margin: 8px 0;
   }
+
+  .product-card-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   
   .product-card-button {
     display: inline-block;
@@ -64,4 +70,6 @@
   .product-card-button:hover {
     background: var(--dark-color);
   }
+
+
   

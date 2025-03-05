@@ -13,16 +13,16 @@ import { CommonModule } from '@angular/common';
 export class ProductsComponent {
   productsService = inject(ProductService);
   products: Product[] = [];
+  favorites: Product[] = []
   page: number = 1;
   limit: number = 12;
-  // Храним выбранную категорию. 'all' по умолчанию
   selectedTitle: string = 'all';
 
   async ngOnInit() {
     await this.fetchProducts();
   }
 
-  // Универсальный метод для фетчинга продуктов в зависимости от выбранной категории
+
   async fetchProducts(reset: boolean = true) {
     if (reset) {
       this.page = 1;
@@ -32,21 +32,28 @@ export class ProductsComponent {
     let newProducts: Product[] = [];
     if (this.selectedTitle === 'all') {
       newProducts = await this.productsService.getProducts(this.page, this.limit) ?? [];
+    } else if (this.selectedTitle === 'favorites') {
+      newProducts = this.favorites
     } else {
       newProducts = await this.productsService.getProductByTitle(this.selectedTitle, this.page, this.limit) ?? [];
     }
     this.products = reset ? newProducts : [...this.products, ...newProducts];
   }
 
-  // Метод для загрузки следующей страницы
   async loadMore() {
     this.page++;
     await this.fetchProducts(false);
   }
 
-  // Метод для смены категории
   async filterProducts(category: string) {
     this.selectedTitle = category;
     await this.fetchProducts(true);
   }
+
+  addToFavorite(product: Product) {
+    this.favorites.push(product)
+    console.log("added product")
+  }
+
+
 }

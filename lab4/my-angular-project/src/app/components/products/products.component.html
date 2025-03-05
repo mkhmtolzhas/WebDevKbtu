@@ -18,17 +18,17 @@
     <button class="category-button" (click)="filterProducts('ThundeRobot')">
         ThundeRobot
     </button>
+    <button class="category-button" (click)="filterProducts('favorites')">
+      Favorites
+  </button>
+
   </div>
   <div class="product-cards">
     <app-product-card
       *ngFor="let product of products"
-      [title]="product.title"
-      [description]="product.description"
-      [price]="product.price"
-      [image]="product.image"
-      [link]="product.link"
-      [rating]="product.rating"
-      [category]="product.category">
+      [product]="product"
+      (addToFavoriteEvent)="addToFavorite($event)"
+      >
     </app-product-card>
   </div>
   
